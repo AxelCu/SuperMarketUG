@@ -5,7 +5,7 @@ class Conexion
     {
         $host = "localhost";
         $port = "3306"; 
-        $dbname = "sistema_usuarios";
+        $dbname = "sistema_usuarios4";
         $user = "root";      
         $password = "";      
 

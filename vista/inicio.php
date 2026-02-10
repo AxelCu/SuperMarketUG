@@ -3,7 +3,7 @@
 <div class="container mt-5 text-center">
     <h2>Bienvenidos al Sistema de Gestión del SuperMarketUG</h2>
     <p class="lead">
-        Gestión de .....
+        Gestion de productos
     </p>
     <a class="btn btn-outline-primary" href="index.php?accion=login">Iniciar Sesion</a>
 </div>
