@@ -1,31 +1,46 @@
 <?php include 'layout/header.php'; ?>
 
-<h2>Consultar Productos</h2>
+<div class="container mt-4">
+    <div class="card shadow p-4">
 
-<form class="mb-3">
-    <input class="form-control" name="q" placeholder="Buscar por nombre o categoría">
-    <button class="btn btn-primary mt-2">Buscar</button>
-</form>
+        <h3 class="mb-4">🔍 Consultar Productos</h3>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach($productos as $p): ?>
-        <tr>
-            <td><?= $p['nombre'] ?></td>
-            <td><?= $p['categoria'] ?></td>
-            <td><?= $p['precio'] ?></td>
-            <td><?= $p['stock'] ?></td>
-        </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
+        <input type="text" id="buscarProducto" 
+               class="form-control mb-3" 
+               placeholder="Buscar por nombre o categoría">
+
+        <table class="table table-hover text-center" id="tablaProductos">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach($productos as $p): ?>
+                    <tr>
+                        <td><?= $p['nombre'] ?></td>
+                        <td><?= $p['categoria'] ?></td>
+                        <td>$<?= $p['precio'] ?></td>
+                        <td><?= $p['stock'] ?></td>
+                        <td>
+                            <a href="index.php?accion=verProducto&id=<?= $p['id'] ?>" 
+                               class="btn btn-info btn-sm">
+                               👁 Ver
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<script src="assets/js/producto.js"></script>
 
 <?php include 'layout/footer.php'; ?>

@@ -15,23 +15,23 @@
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <img src="../img/imagen1.jpg" class="d-block w-100" alt="Imagen 1">
+                <img src="../assets/img/imagen6.png" class="d-block w-100" alt="Imagen 1">
             </div>
 
             <div class="carousel-item">
-                <img src="../img/imagen2.jpg" class="d-block w-100" alt="Imagen 2">
+                <img src="../assets/img/imagen7.png" class="d-block w-100" alt="Imagen 2">
             </div>
 
             <div class="carousel-item">
-                <img src="../img/imagen3.jpg" class="d-block w-100" alt="Imagen 3">
+                <img src="../assets/img/imagen8.png" class="d-block w-100" alt="Imagen 3">
             </div>
 
             <div class="carousel-item">
-                <img src="../img/imagen4.jpg" class="d-block w-100" alt="Imagen 4">
+                <img src="../assets/img/imagen9.png" class="d-block w-100" alt="Imagen 4">
             </div>
 
             <div class="carousel-item">
-                <img src="../img/imagen5.jpg" class="d-block w-100" alt="Imagen 5">
+                <img src="../assets/img/imagen10.png" class="d-block w-100" alt="Imagen 5">
             </div>
 
         </div>

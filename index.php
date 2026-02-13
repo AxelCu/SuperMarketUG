@@ -7,7 +7,6 @@ $usuarioCtrl = new UsuarioControlador();
 
 switch ($accion) {
 
-    // 🔐 LOGIN
     case 'login':
         include 'vista/login.php';
         break;
@@ -19,11 +18,18 @@ switch ($accion) {
         );
         break;
 
+    case 'logout':
+    session_start();
+    session_unset();
+    session_destroy();
+    header("Location: index.php?accion=login&mensaje=logout");
+    exit;
+
+
     case 'menu':
         include 'vista/menu.php';
         break;
 
-    // 📦 PRODUCTOS (NUEVO)
     case 'productos':
         require_once 'controlador/ProductoControlador.php';
         (new ProductoControlador())->listar();
@@ -53,6 +59,19 @@ switch ($accion) {
         require_once 'controlador/ProductoControlador.php';
         (new ProductoControlador())->consultar();
         break;
+
+    case 'verProducto':
+        require_once 'controlador/ProductoControlador.php';
+        (new ProductoControlador())->verProducto();
+        break;
+
+    case 'ajaxConsultar':
+        require_once 'dao/ProductoDao.php';
+        header('Content-Type: application/json');
+        echo json_encode(
+            (new ProductoDao())->consultar($_GET['q'] ?? '')
+        );
+        exit;
 
     case 'inicio':
     default:

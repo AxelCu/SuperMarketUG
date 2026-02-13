@@ -1,26 +1,37 @@
-<?php include __DIR__ . '/layout/header.php'; ?>
+<?php 
+session_start(); 
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="m-0">Menú Principal - SuperMarketUG</h2>
-        <a class="btn btn-outline-danger" href="index.php?accion=logout">
-            Cerrar Sesión
+include __DIR__ . '/layout/header.php'; 
+?>
+
+<div class="card card-custom p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="section-title">
+            <i class="fa-solid fa-gauge"></i> Panel Principal
+        </h3>
+
+        <a class="btn btn-outline-danger btn-sm" href="index.php?accion=logout">
+            <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
         </a>
     </div>
 
-    <p>
-        Bienvenido,
-        <strong><?= isset($_SESSION['usuario']) ? $_SESSION['usuario'] : 'Usuario' ?></strong>
+    <p>Bienvenido,
+        <strong><?= $_SESSION['usuario'] ?? 'Usuario' ?></strong>
     </p>
 
-    <div class="list-group mt-4">
+    <div class="list-group mt-3">
 
-        <a href="index.php?accion=productos" class="list-group-item list-group-item-action">
-            🧾 Gestión de Productos 
+        <a href="index.php?accion=productos" 
+           class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-boxes-stacked text-success"></i>
+            Gestión de Productos
         </a>
 
-        <a href="index.php?accion=consultarProductos" class="list-group-item list-group-item-action">
-            🔎 Consultar / Buscar Productos
+        <a href="index.php?accion=consultarProductos" 
+           class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-magnifying-glass text-success"></i>
+            Consultar / Buscar Productos
         </a>
 
     </div>
